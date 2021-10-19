@@ -6,14 +6,14 @@ public class Cat {
     private boolean satiety;
 
 
-    public Cat(String name, int appetite, boolean satiety) {
+    public Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
         this.satiety = false;
     }
 
-    public void eat(Plate p) {
-        p.decreaseFood(appetite);
+    public void eat(Plate plate) {
+        satiety = plate.decreaseFood(appetite);
     }
 
     public int getAppetite() {
@@ -27,5 +27,6 @@ public class Cat {
     public void info() {
         System.out.print("Имя: " + name);
         System.out.print(" сытый едой: " + satiety);
+        System.out.println();
     }
 }
